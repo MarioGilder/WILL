@@ -5,55 +5,53 @@
   No comentar la funcion 
 */
 function crearClasePersona() {
+  // Crear una clase para construir objeto de tipo Persona.
+  // el constructor debe recibir:
+  // nombre (string) , edad (integer) , hobbies (array de strings) , amigos (array de objetos)
   class Persona {
-    constructor(nombre, edad, hobbies, amigos) {
-      // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
-      // Inicializar las propiedades de la persona con los valores recibidos como argumento
-
-      // Tu código aca:
+    constructor( nombre,edad,hobby,amigos) {
+      this.nombre=nombre;
+      this.edad=edad;
+      this.hobby=hobby;
+      this.amigos=amigos;
 
     }
 
     addFriend(nombre, edad) {
-      // El método 'addFriend' recibe un string 'nombre' y un entero 'edad' y debe agregar un objeto:
+      // el metodo addFriend recibe un string nombre y un entero edad y debe agregar un objeto:
       // { nombre: nombre, edad: edad} al arreglo de amigos de la persona.
-      // No debe retornar nada.
+      // no debe retornar nada.
 
-      // Tu código aca:
-
+      var amigo={nombre,edad}
+      this.amigos.push({amigo})
     }
 
     addHobby(hobby) {
-      // El método 'addHobby' recibe un string 'hobby' y debe agregarlo al arreglo de hobbies de la persona.
-      // No debe retornar nada.
-
-      // Tu código aca:
+      // este método debe agregar un hobby (hobby) al arreglo de hobbies de la persona.
+      // no debe retornar nada.
+      this.hobbies.push(hobby);
 
     }
     getFriends() {
-      // El método 'getFriends' debe retornar un arreglo con sólo los nombres del arreglo de amigos
+      // Escribe una función que retorne un arreglo con sólo los nombres del arreglo de amigos
       // de la persona.
       // Ej:
-      // Suponiendo que la persona tiene estos amigos: [{nombre: 'martin', edad: 31},{nombre: 'toni', edad: 33}]
-      // persona.getFriends() debería devolver ['martin', 'toni']
-
-      // Tu código aca:
+      // persona.getFriends() // retorna ['toni', 'Leo', 'Manu']
+      const transformarObjetoAmigoANombre = ((amigo) => amigo.nombre);
+      const indexed = amigos.map(transformarObjetoAmigoANombre);
 
     }
 
     getHobbies() {
-      // El método 'getHobbies' debe retornar un arreglo con los hobbies de la persona
+      // Escribe una función que retorne un arreglo con los hobbies de la persona
       // Ej:
-      // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
-
-      // Tu código aca:
+      // persona.getHobbies() // retorna ['correr', 'dormir', 'nadar']
 
     }
 
     getPromedioEdad() {
-      // El método 'getPromedioEdad' debe retornar el promedio de edad de los amigos de una persona
-      // Ej:
-      // Si la persona tuviera estos amigos:
+      // Escribe una función que retorne el promedio de edad de los amigos de una persona
+      // ej, si la persona tuviera estos amigos:
       // {
       //   amigos: [{
       //     nombre: 'toni',
@@ -63,11 +61,14 @@ function crearClasePersona() {
       //     edad: 25
       //   }]
       // }
-      // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
-
-      // Tu código aca:
+      // persona.getPromedioEdad() // retorna 29
+      var sum = this.edad.reduce((previous, current) => current += previous);
+      var prom = sum / this.edad.length;{
+        return prom;
+      }
 
     }
+
   };
 
   return Persona;

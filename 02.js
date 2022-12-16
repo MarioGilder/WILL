@@ -4,16 +4,25 @@
   código dentro de las funciones ya definidas. 
   No comentar la funcion 
 */
-function stringMasLarga(strings) {
-  // La función llamada 'stringMasLarga', recibe como argumento un arreglo de strings llamado 'strings'
-  // y debe devolver el string más largo que hay en el arreglo (Es decir el de mayor cantidad de caracteres)
-  // Ej:
-  // stringMasLarga(['hi', 'hello', 'ni hao', 'guten tag']); debe retornar 'guten tag'
-  // stringMasLarga(['JavaScript', 'HTML', 'CSS']); debe retornar 'JavaScript'
+function sumaTodos(array) {
+  // La funcion llamada 'sumaTodos' recibe como argumento un array con dos numeros
+  // y debe devolver la suma total entre todos los numeros dentro de ese rango
+  // ej:
+  // sumaTodos([1,3]) => 1 + 2 + 3 = 6
+  // Nota: Los numeros estan ordenados de menor a mayor.
 
-  // Tu código aca
+  // Tu código aca:
+  
+  let inicio=numero[0];
+  let fin=numero[1];
+  let suma=0;
+  for (let i=inicio;i<=fin;i++){
+    suma +=i;
+  }
+  return suma;
+
 }
 
 // No modifiques nada debajo de esta linea //
 
-module.exports = stringMasLarga
+module.exports = sumaTodos
